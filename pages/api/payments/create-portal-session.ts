@@ -1,7 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import stripe from '@lib/stripe';
 import { getSession } from 'next-auth/client';
-import prisma from '@lib/prisma';
 import FindOrCreateCustomer from '@lib/mutations/FindOrCreateCustomer';
 
 export default async function handler(
@@ -24,7 +23,7 @@ export default async function handler(
 		customer: customerId,
 		// This is the url to which the customer will be redirected when they are done
 		// managing their billing with the portal.
-		return_url: 'http://localhost:3000/account',
+		return_url: 'https://saas-starter-h1mar.vercel.app/account',
 	});
 
 	// Redirect to the URL for the session

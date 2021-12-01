@@ -37,8 +37,8 @@ export default async function handler(
 				quantity: 1,
 			},
 		],
-		success_url: 'http://localhost:3000/account',
-		cancel_url: 'http://localhost:3000/account',
+		success_url: 'https://saas-starter-h1mar.vercel.app/account',
+		cancel_url: 'https://saas-starter-h1mar.vercel.app/account',
 	});
 
 	return res.status(200).json({ url: session.url });
